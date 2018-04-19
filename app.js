@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -11,6 +13,17 @@ var pollLocationRouter = require('./routes/locations');
 var electionsRouter = require('./routes/elections');
 
 var app = express();
+
+//Initialize Firebase
+var config = {
+    apiKey: "AIzaSyAoT8tW_4Hh89ns4msbumBf9kDaa5CqCgI",
+    authDomain: "vootapp-2a028.firebaseapp.com",
+    databaseURL: "https://vootapp-2a028.firebaseio.com",
+    projectId: "vootapp-2a028",
+    storageBucket: "vootapp-2a028.appspot.com",
+    messagingSenderId: "108880894642"
+  };
+  firebase.initializeApp(config);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
