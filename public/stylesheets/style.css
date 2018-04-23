@@ -8,7 +8,7 @@ a {
 }
 
 /* CSS Styling for Navigation Bar */
-.mr-auto {
+.ml-auto {
   left: auto !important;
   right: 0px;
 }
