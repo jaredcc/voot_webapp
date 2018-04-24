@@ -7,21 +7,49 @@ api = {
     "zipCode" : "78660"
 };
 
-function getReqString() {
+function getReqString(addressEmpty) {
+  if (addressEmpty) {
     return api.URL + api.API_Key + "&address=" + api.address + " " + api.city + " " + api.state + " " + api.zipCode;
+  }
+  else {
+    return api.URL + api.API_Key
+     + "&address=" + document.getElementById('address').value + " "
+     + document.getElementById('city').value + " "
+     + document.getElementById('state').value + " "
+     + document.getElementById('zipCode').value;
+  }
+
+}
+
+function addressEmpty() {
+  var address = document.getElementById('address').value;
+  var city = document.getElementById('city').value;
+  var state = document.getElementById('state').value;
+  var zip = document.getElementById('zipCode').value;
+
+  document.getElementById('addressForm').style.display = "none";
+
+  if ((!address.trim()) || (!city.trim()) || (!state.trim()) || (!zip.trim())) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
 function sendRequest() {
 
-	// Reset the api values
+    // Change the Page header and Hide Alert
+    document.getElementById('header').innerHTML = "Your Representatives";
+    document.getElementById('form-msg').style.display = "none";
 
     // Clear the current list
     document.getElementById("repTable").innerHTML = "";
 
-    // Remove the address form
-    document.getElementById("addressForm").innerHTML = "";
 
-    var reqURL = getReqString();
+    var isEmpty = addressEmpty();
+    var reqURL = getReqString(isEmpty);
+
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
@@ -63,6 +91,7 @@ function addRepToTable(index, repData, officeName) {
     // row is full make a new row
     if (lastRow == undefined || lastRow.cells.length == 4) {
         var newRow = document.createElement("tr");
+        newRow.classList.add("row");
         newRow.appendChild(newRep);
         repTable.appendChild(newRow);
     }
@@ -78,7 +107,7 @@ function generateRep(index, repData, officeName) {
     var rep = repData.officials[index];
     var repCell = document.createElement("td");
     var name = rep.name;
-    repCell.setAttribute("class", "repCell");
+    repCell.classList.add("repCell");
 
     // Set Representative Name, Party, Address
     var repName = rep.name;

@@ -1,16 +1,63 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-table {
-    border-collapse: inherit;
-    border-spacing: 1.75em;
+
+/* Begin Animation Code for Table */
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.row td {
+  animation: FadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+.table tr {
+  animation: FadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+.table tr:nth-child(1) { animation-delay: .25s }
+.table tr:nth-child(2) { animation-delay: .5s }
+.table tr:nth-child(3) { animation-delay: .75s }
+.table tr:nth-child(4) { animation-delay: 1s }
+.table tr:nth-child(5) { animation-delay: 1.25s }
+.table tr:nth-child(6) { animation-delay: 1.5s }
+.table tr:nth-child(7) { animation-delay: 1.75s }
+.table tr:nth-child(8) { animation-delay: 2s }
+.table tr:nth-child(9) { animation-delay: 2.25s }
+
+.row td:nth-child(1) { animation-delay: .25s }
+.row td:nth-child(2) { animation-delay: .5s }
+.row td:nth-child(3) { animation-delay: .75s }
+.row td:nth-child(4) { animation-delay: 1s }
+
+/* EndAnimation Code for Table */
+
+.table {
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+  float: none;
 }
 
 .repCell {
   width: 200px;
   height: 200px;
   text-align: center;
+  vertical-align: middle;
   color: white;
-
+  margin: 1em;
   font-family: 'Roboto', sans-serif;
 
   background: -webkit-gradient(#33BFEC, #0898C6);
@@ -20,7 +67,9 @@ table {
   background: linear-gradient(#33BFEC, #0898C6);
 
   padding: 10px;
-
+  padding-top: 100px;
+  font-size: 20px;
+  
 }
 
 .repCell:hover {
@@ -72,20 +121,6 @@ table {
     width: 80%;
 }
 
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .repcard-title,
 .repcard-position{
@@ -99,6 +134,15 @@ table {
 
 .repcard-container {
   padding-bottom: 50px;
+}
+
+.form-msg {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#alert-wrapper {
+  margin: 0 auto;
 }
 
 #myModal {
