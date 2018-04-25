@@ -25,3 +25,6 @@ var x = setInterval(function() {
     document.getElementById("votingCountDown").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+// TODO: Find the polling location for a particular user
+//       using the stored address associated with their account
