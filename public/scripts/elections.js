@@ -8,5 +8,7 @@ function toggleCandidates(election) {
 
 // Loads an empty calendar when the page is loaded
 window.onload = function() {
+  // TODO Use firebase user Information
+  // to load elections
   $('#calendar').fullCalendar({defaultView: 'month'});
 }
