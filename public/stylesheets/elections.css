@@ -1,0 +1,57 @@
+.header {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+/* Election Information Tables */
+
+.table-wrapper {
+  float: right;
+  width: 20%;
+  height: 650px;
+  overflow: auto;
+}
+
+.election-scroll-title {
+  width: 20%;
+  float: right;
+  text-align: center;
+  font-size: 2em;
+  padding-bottom: 10px;
+}
+
+table {
+  width: 100% !important;
+  text-align: center;
+  border-radius: 10px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  overflow:auto;
+}
+
+tr {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
+.table-header:hover {
+  cursor: pointer;
+}
+
+.candidate td {
+  display: none;
+}
+
+.calendar {
+
+}
+
+/* Election Calendar */
+.calendar-wrapper {
+  width: 75%;
+  float: left;
+  height: 70%;
+  margin-bottom: 20px;
+  padding-left: 180px;
+}
