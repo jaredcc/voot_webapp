@@ -23,11 +23,11 @@ console.log('Beginning Signup Page Tests...');
 testPageLoad(driver_ff);
 testPageLoad(driver_ch);
 
-testCreateNewUser(driver_ff);
-testCreateNewUser(driver_ch);
-
 checkSignupForm(driver_ff);
 checkSignupForm(driver_ch);
+
+testCreateNewUser(driver_ff);
+testCreateNewUser(driver_ch);
 
 
 console.log('End Test: Failures = ' + failures + ' Successes = ' + successes);
@@ -66,13 +66,18 @@ function checkSignupForm(driver) {
 
 function testCreateNewUser(driver) {
   driver.get('localhost:3000/users/signup');
+  var emailInput = driver.findElement(By.id('email'));
+  var passwordInput = driver.findElement(By.id('password'));
+  emailInput.sendKeys('mockuser@test.com');
+  passwordInput.sendKeys('testpassword');
+
   var submitBtn = driver.findElement(By.id('submitBtn'));
   submitBtn.click();
 
   driver.sleep(8000).then(function() {
     var headerTxt = driver.findElement(By.id('header')).getText();
     console.log(headerTxt);
-    if (headerTxt == 'Your Representatives') {
+    if (headerTxt == 'Login to your Account') {
       successes++;
       console.log('Create New User | SUCCESS');
     }
