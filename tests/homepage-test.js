@@ -5,9 +5,9 @@ var webdriver = require('selenium-webdriver'),
 
 // Create Drivers for the browsers we want
 // to test our site on
-var driver_ff = new webdriver.Builder()
-    .forBrowser('firefox')
-    .build();
+// var driver_ff = new webdriver.Builder()
+//     .forBrowser('firefox')
+//     .build();
 
 var driver_ch = new webdriver.Builder()
     .forBrowser('chrome')
@@ -21,18 +21,18 @@ var successes = 0;
 console.log('Beginning Home Page Tests...');
 
 // Navigation Bar Test
-checkNavigationBar(driver_ff);
+// checkNavigationBar(driver_ff);
 checkNavigationBar(driver_ch);
 
 // Voting Location Test
-checkVotingLocation(driver_ff);
+// checkVotingLocation(driver_ff);
 checkVotingLocation(driver_ch);
 
 // Voting Count Down Test
-checkVotingCountDown(driver_ff);
+// checkVotingCountDown(driver_ff);
 checkVotingCountDown(driver_ch);
 
-console.log('End Test: Failures = ' + failures + ' Successes = ' + successes);
+// console.log('End Test: Failures = ' + failures + ' Successes = ' + successes);
 
 
 // Define Test Functions Here

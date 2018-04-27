@@ -18,13 +18,12 @@ var failures = 0;
 var successes = 0;
 
 // Call Test Functions Here
-console.log('Beginning Home Page Tests...');
+console.log('Beginning Representative Page Tests...');
 
-
-// testPageLoad(driver_ch);
+testPageLoad(driver_ch);
 testRepresentativeLoad(driver_ch);
 
-console.log('End Test: Failures = ' + failures + ' Successes = ' + successes);
+// console.log('End Test: Failures = ' + failures + ' Successes = ' + successes);
 
 // Define Test Functions Here
 function testPageLoad(driver) {
