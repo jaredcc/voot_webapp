@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+      <h1>Login to your Account</h1>
+      <form method="post" action="/users/signup">
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input class="input" id="email" name="email" type="email"></input>
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input class="input" id="password" name="password" type="password"></input>
+        </div>
+        <div class="form-action">
+          <button class="btn" type="submit">Send</button>
+        </div>
+          <a href="/users/signup">Create a new account here!</a>
+      </form>      
+  </body>
+</html>

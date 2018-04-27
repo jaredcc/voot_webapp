@@ -5,18 +5,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <!--
       <h1>Create a New Account</h1>
+      <div class="errormessages">
+        
+      </div>
       <form method="post" action="/users/signup">
           <div class="form-field">
-            <label for="name">Name</label>
-            <input class="input" id="name" name="name" type="text"></input>
+            <label for="firstname">First Name</label>
+            <input class="input" id="firstname" name="firstname" type="text"></input>
+          </div>
+          <div class="form-field">
+            <label for="lastname">Last Name</label>
+            <input class="input" id="lastname" name="lastname" type="text"></input>
           </div>
           <div class="form-field">
             <label for="address">Address</label>
             <input class="input" id="address" name="address" type="text"></input>
           </div>
-
+          
         <div class="form-field">
           <label for="city">City</label>
           <input class="input" id="city" name="city" type="text"></input>
@@ -41,6 +47,6 @@
           <button class="btn" type="submit">Send</button>
         </div>
       </form>      
--->
+
   </body>
 </html>
