@@ -1,11 +1,113 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>representatives</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Representatives</h1>
-    <p>Welcome to the reps page</p>
-  </body>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/stylesheets/representatives.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+
+  <title>Representatives</title>
+
+</head>
+
+
+<body>
+  <!-- BEGIN Navigation Bar -->
+  <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Voot</a>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/elections">Elections</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/locations">Locations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/representatives">Representatives</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               My Account
+             </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a id="accountLink" class="dropdown-item" href="/users">Profile</a>
+          <a id="accountLink" class="dropdown-item" href="/users/login">Login</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- END Navigation Bar -->
+
+  <h1 id="header" class="header">Find Your Representatives</h1>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Popup Window -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="repInfo"></p>
+    </div>
+
+  </div>
+
+  <div class="alert-wrapper text-center">
+    <div id="form-msg" class="alert alert-info form-msg" role="alert">
+      You can either leave the above form blank and use the saved <br> address associated with your account, or enter a new address.
+    </div>
+  </div>
+
+  <div id="addressForm">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Address Line</label>
+      <input type="text" class="form-control" id="address" placeholder="123 Appleseed Place">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">City</label>
+      <input type="text" class="form-control" id="city" placeholder="Austin">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">State</label>
+      <input type="text" class="form-control" id="state" placeholder="TX">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Zip Code</label>
+      <input type="text" class="form-control" id="zipCode" placeholder="78705">
+    </div>
+
+    <div id="repBtn"><button onclick="sendRequest()" type="submit" class="btn btn-primary">See My Representatives</button></div>
+  </div>
+
+
+
+  <div class="container-fluid">
+
+    <table id="repTable" class="table-spacing table text-center" align="center">
+
+    </table>
+  </div>
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script src="/scripts/representatives.js"></script>
+</body>
+
 </html>

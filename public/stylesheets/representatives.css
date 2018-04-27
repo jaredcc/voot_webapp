@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+/* Begin Animation Code for Table */
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(.1);
+  }
+
+  85% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.row td {
+  animation: FadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+.table tr {
+  animation: FadeIn 1s linear;
+  animation-fill-mode: both;
+}
+
+.table tr:nth-child(1) { animation-delay: .25s }
+.table tr:nth-child(2) { animation-delay: .5s }
+.table tr:nth-child(3) { animation-delay: .75s }
+.table tr:nth-child(4) { animation-delay: 1s }
+.table tr:nth-child(5) { animation-delay: 1.25s }
+.table tr:nth-child(6) { animation-delay: 1.5s }
+.table tr:nth-child(7) { animation-delay: 1.75s }
+.table tr:nth-child(8) { animation-delay: 2s }
+.table tr:nth-child(9) { animation-delay: 2.25s }
+
+.row td:nth-child(1) { animation-delay: .25s }
+.row td:nth-child(2) { animation-delay: .5s }
+.row td:nth-child(3) { animation-delay: .75s }
+.row td:nth-child(4) { animation-delay: 1s }
+
+/* EndAnimation Code for Table */
+
+.table {
+  border-radius: 5px;
+  width: 60%;
+  margin: auto;
+  float: none;
+}
+
+.repCell {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+  margin: 1em;
+  font-family: 'Roboto', sans-serif;
+
+  background: -webkit-gradient(#33BFEC, #0898C6);
+  background: -webkit-linear-gradient(#33BFEC, #0898C6);
+  background: -moz-linear-gradient(#33BFEC, #0898C6);
+  background: -o-linear-gradient(#33BFEC, #0898C6);
+  background: linear-gradient(#33BFEC, #0898C6);
+
+  padding: 10px;
+  padding-top: 100px;
+  font-size: 20px;
+  
+}
+
+.repCell:hover {
+  cursor: pointer;
+  background: #FF3368;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition:background .3s ease-in, .3s ease-out;
+}
+
+.header {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+#addressForm {
+  padding-left: 15em;
+  padding-right: 15em;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#repBtn {
+  padding-top: 30px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+.repcard-title,
+.repcard-position{
+  text-align: center;
+}
+
+.repcard {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.repcard-container {
+  padding-bottom: 50px;
+}
+
+.form-msg {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#alert-wrapper {
+  margin: 0 auto;
+}
+
+#myModal {
+  padding-bottom: 60px;
+}
