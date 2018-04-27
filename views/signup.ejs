@@ -5,11 +5,11 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-      <h1>Create a New Account</h1>
+      <h1 id="header">Create a New Account</h1>
       <div class="errormessages">
         
       </div>
-      <form method="post" action="/users/signup">
+      <form id="signupForm" method="post" action="/users/signup">
           <div class="form-field">
             <label for="firstname">First Name</label>
             <input class="input" id="firstname" name="firstname" type="text"></input>
@@ -44,7 +44,7 @@
           <input class="input" id="password" name="password" type="password"></input>
         </div>
         <div class="form-action">
-          <button class="btn" type="submit">Send</button>
+          <button id="submitBtn" class="btn" type="submit">Send</button>
         </div>
       </form>      
 
