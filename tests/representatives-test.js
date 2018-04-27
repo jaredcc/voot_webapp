@@ -20,12 +20,9 @@ var successes = 0;
 // Call Test Functions Here
 console.log('Beginning Home Page Tests...');
 
-// testPageLoad(driver_ff);
+
 // testPageLoad(driver_ch);
 testRepresentativeLoad(driver_ch);
-
-// testRepresentativeLoad(driver_ff);
-// testRepresentativeLoad(driver_ch);
 
 console.log('End Test: Failures = ' + failures + ' Successes = ' + successes);
 
