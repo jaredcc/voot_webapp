@@ -65,7 +65,7 @@ router.get('/signout', function(req, res, next) {
 
 router.post('/signout', function(req, res, next) {
   auth.auth.doSignOut();
-  res.render('index');
+  res.render('login', { status: 'Login'});
 });
 
 module.exports = router;
