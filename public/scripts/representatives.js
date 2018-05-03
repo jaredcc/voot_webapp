@@ -39,6 +39,9 @@ function addressEmpty() {
 
 function sendRequest() {
 
+    // TODO send request to server to
+    // get the user's saved address
+
     // Change the Page header and Hide Alert
     document.getElementById('header').innerHTML = "Your Representatives";
     document.getElementById('form-msg').style.display = "none";
@@ -46,13 +49,14 @@ function sendRequest() {
     // Clear the current list
     document.getElementById("repTable").innerHTML = "";
 
-
+    // Check if the Address is Empty
     var isEmpty = addressEmpty();
     var reqURL = getReqString(isEmpty);
 
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            // TODO Check if the response is VALID
             parseRepData(xmlHttp.responseText);
         }
     }

@@ -11,13 +11,13 @@
 }
 
 #votingWrapper {
-  width: 69%;
+  width: 64%;
   margin: 0 auto;
 }
 
 #votingLocation, #votingCountDown {
-  width: 15em;
-  height: 15em;
+  width: 14em;
+  height: 14em;
   margin: 1em;
   text-align: center;
   float: left;

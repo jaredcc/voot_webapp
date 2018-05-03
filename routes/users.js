@@ -5,7 +5,17 @@ var auth = require(path.resolve(__dirname, "../firebase/index"));
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('users');
+  // Grab user from firebase instance
+  var user = auth.firebase.authdata;
+
+  if (user) { // user exists
+    // Grab user address
+    console.console.log("USER FOUND...s");
+    res.render('users');
+  }
+  else { // return error message
+    res.render('login');
+  }
 });
 
 router.get('/login', function(req, res, next) {

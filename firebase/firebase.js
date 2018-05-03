@@ -8,9 +8,24 @@ var config = {
     projectId: "vootapp-2a028",
     storageBucket: "vootapp-2a028.appspot.com",
     messagingSenderId: "108880894642"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
-  const auth = firebase.auth();
+// Anytime a login happens (or sign out)
+// the current firebase user is updated
+// by this function
+var authdata = null;
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    authdata = user;
+  }
+  else {
+   authdata = null;
+  }
+});
 
-  module.exports = auth;
+const auth = firebase.auth();
+
+
+module.exports.auth = auth;
+module.exports.authdata = authdata;
