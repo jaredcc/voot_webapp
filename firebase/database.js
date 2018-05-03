@@ -20,7 +20,7 @@ var userData;
 //read all data associated with a user
 function readUserData(uid){
 	var userRef = database.database.ref('/USERS_TABLE/' + uid);
-	return userRef.once('value').then(function(snapshot) {
+	userRef.once('value').then(function(snapshot) {
 		userData = {
 			firstname:(snapshot.val() && snapshot.val().firstname),
 			lastname:(snapshot.val() && snapshot.val().lastname),
@@ -31,10 +31,13 @@ function readUserData(uid){
 			county:(snapshot.val() && snapshot.val().county),
 			zipcode:(snapshot.val() && snapshot.val().zipcode)
 		};
+	}).then(function() {
+		console.log(userData);
+		return userData;
 	});
+
 }
 
 
 module.exports.writeUserData = writeUserData;
 module.exports.readUserData = readUserData;
-
