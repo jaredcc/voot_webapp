@@ -171,7 +171,7 @@ function showRepresentative (repName) {
     }
     card.appendChild(cardImg);
 
-    // Add Representative Namd and Title
+    // Add Representative Name and Title
     var cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
     var name = document.createElement("h5");
