@@ -27,5 +27,5 @@ firebase.auth().onAuthStateChanged(function(user) {
 const auth = firebase.auth();
 
 
-module.exports.auth = auth;
+module.exports.auth = firebase.auth();
 module.exports.authdata = authdata;
