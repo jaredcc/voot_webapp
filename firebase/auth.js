@@ -1,27 +1,30 @@
 var path = require('path');
 //var auth = require('./firebase');
-var auth = require(path.resolve(__dirname, "./firebase"));
+var firebase = require(path.resolve(__dirname, "./firebase"));
 
 
 //New user sign up
 const doCreateUserWithEmailAndPassword = (email, password) =>
-	auth.createUserWithEmailAndPassword(email, password);
+	firebase.auth.createUserWithEmailAndPassword(email, password);
 
 //login existing user
 const doSignInWithEmailAndPassword = (email, password) =>
-	auth.SignInWithEmailAndPassword(email, password);
+	firebase.auth.signInWithEmailAndPassword(email, password)
+		.catch(function(error){
+			console.log(error);
+	});
 
 //Sign out
 const doSignOut = () =>
-	auth.signOut();
+	firebase.auth.signOut();
 
 //Password reset
 const doPasswordReset = (email) =>
-	auth.sendPasswordResetEmail(email);
+	firebase.auth.sendPasswordResetEmail(email);
 
 //Password change
 const doPasswordUpdate = (password) =>
-	auth.currentUser.updatePassword(password);
+	firebase.auth.currentUser.updatePassword(password);
 
 module.exports.doCreateUserWithEmailAndPassword = doCreateUserWithEmailAndPassword;
 module.exports.doSignInWithEmailAndPassword = doSignInWithEmailAndPassword;
