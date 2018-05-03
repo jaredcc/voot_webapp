@@ -21,7 +21,7 @@
 
 <body>
   <!-- BEGIN Navigation Bar -->
-  <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+  <nav id="navbar" class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Voot</a>
 
     <ul class="navbar-nav ml-auto">
@@ -35,15 +35,15 @@
         <a class="nav-link" href="/locations">Locations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/representatives">Representatives</a>
+        <a id="repLink" class="nav-link" href="/representatives">Representatives</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="/users" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                My Account
              </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a id="accountLink" class="dropdown-item" href="/users/login">Profile</a>
-          <a id="accountLink" class="dropdown-item" href="/users/login">Login</a>
+          <a id="accountLink" class="dropdown-item" href="/users">Profile</a>
+          <a id="accountLink" class="dropdown-item" href="/users/login"><%= status %></a>
         </div>
       </li>
     </ul>

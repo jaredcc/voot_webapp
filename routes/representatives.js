@@ -5,7 +5,14 @@ var auth = require(path.resolve(__dirname, "../firebase/index"));
 
 /* GET representatives page. */
 router.get('/', function(req, res, next) {
-  res.render('representatives');
+  // Grab user from firebase instance
+  var user = auth.firebase.auth.currentUser;
+  if (user) { // user exists
+    res.render('representatives', {status: 'Sign Out'});
+  }
+  else { // return error message
+    res.render('representatives', {status: 'Login'});
+  }
 });
 
 router.post('/user-address', function(req, res, next) {
@@ -13,12 +20,10 @@ router.post('/user-address', function(req, res, next) {
   // the user is logged in return their saved address
 
   // Grab user from firebase instance
-  var user = auth.firebase.authdata;
+  var user = auth.firebase.auth.currentUser;
 
   if (user) { // user exists
     // Grab user address
-    console.log("USER FOUND...");
-  
   }
   else { // return error message
     res.send('No User Found');
