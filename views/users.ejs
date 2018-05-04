@@ -43,7 +43,17 @@
     </nav>
     <!-- END Navigation Bar -->
 
-    <h1 class="users-header" id="header">Welcome <%= firstname %>!</h1>
+    <h1 class="users-header" id="header"><%= firstname %>'s Profile</h1>
+    <div class="profilePage">
+            <p><strong>First Name: </strong> <%= firstname %></p>
+            <p><strong>Last Name: </strong> <%= lastname %></p>
+            <p><strong>Email: </strong> <%= email %></p>
+            <p><strong>Street Address: </strong><%= street %></p>
+            <p><strong>City: </strong><%= city %></p>
+            <p><strong>State: </strong><%= state %></p>
+            <p><strong>Zipcode: </strong><%= zipcode %></p>
+      </div>
+
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

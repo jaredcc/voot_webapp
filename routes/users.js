@@ -99,7 +99,7 @@ router.post('/signup', function(req, res, next) {
       var user = auth.firebase.auth.currentUser;
       var uid = user.uid;
       database.database.writeUserData(uid, firstname, lastname, email, street, state, city, county, zipcode, "true");
-      res.redirect('/users');
+      res.redirect('/users/profile');
     });
   });
 });

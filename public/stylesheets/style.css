@@ -63,6 +63,22 @@ input {
   margin: auto;
 }
 
+.profilePage {
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+  background: #f8f8f8;
+  border: 1px solid #f8f8f9;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px grey;
+  margin: auto;
+}
+
+
+.infoTitle {
+  font-weight: bold;
+}
+
 img {
   display: block;
   margin-left: auto;
