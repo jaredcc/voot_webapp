@@ -17,6 +17,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 /* The Modal (background) */
@@ -56,6 +57,7 @@ html, body {
 
 .card-data {
   text-align: center;
+  color: black;
 }
 
 .map-link {

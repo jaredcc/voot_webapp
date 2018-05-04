@@ -57,6 +57,8 @@ function getElections(state) {
           }
       });
 
+      console.log('COUNT: ' + count);
+
       if (count == 0) {
         document.getElementById('no-election-warning').style.display = "block";
         res.elections.forEach(function(election) {
@@ -87,7 +89,7 @@ function addToSideBar(election) {
 
   var thead = document.createElement('thead');
   var tr = document.createElement('tr');
-  tr.classList.add('table-info');
+  tr.classList.add('table-primary');
   var title = document.createElement('th');
   title.innerHTML = election.name;
 

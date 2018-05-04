@@ -28,6 +28,7 @@ table {
   border-radius: 6px;
   -moz-border-radius: 6px;
   overflow:auto;
+  color: black;
 }
 
 tr {
@@ -43,9 +44,6 @@ tr {
   display: none;
 }
 
-.calendar {
-
-}
 
 .warn-msg {
   display: inline-block;

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var auth = require(path.resolve(__dirname, "../firebase/index"));
+var firebase = require(path.resolve(__dirname, "../firebase/index"));
 
 /* GET elections page. */
 router.get('/', function(req, res, next) {
