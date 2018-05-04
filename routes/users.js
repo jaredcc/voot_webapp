@@ -60,6 +60,12 @@ router.post('/login', function(req, res, next) {
   var password = req.body.password;
   auth.auth.doSignInWithEmailAndPassword(email, password);
   res.render('signout', {status: 'Sign Out'});
+
+  // TODO Pull This User's Information
+  // From the Database and setup the process
+  // environment variable
+  
+
 });
 
 router.get('/signup', function(req, res, next) {
