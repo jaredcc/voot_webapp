@@ -68,3 +68,13 @@ html, body {
   color: #FF3368;
   text-decoration: none;
 }
+
+#no-location-warning {
+  margin: 0 auto;
+}
+
+.warn-msg {
+  display: none;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}

@@ -20,9 +20,6 @@ router.get('/', function(req, res, next) {
   		};
 
   	}).then(function() {
-      // var str = userData.street.replace(' ', '-');
-      // console.log(str);
-      // console.log('sfjkdlsfnds fdskjlnfdjsnfjkds fjdsbjfkdbsjfd sjfbdjskbfjdks fds');
       userData.street = userData.street.split(' ').join('%20');
       res.render('representatives', {status: 'Sign Out', street: userData.street, state: userData.state, city: userData.city, zipcode: userData.zipcode});
     });

@@ -29,7 +29,7 @@ function initMap() {
     zoom: 12
   });
 
-  addMarker(30.2672, -97.7431, 'Austin, Texas'); // Austin, Tx
+  // addMarker(30.2672, -97.7431, 'Austin, Texas'); // Austin, Tx
 
   // Add polling locations
   addPollingLocations();
@@ -45,12 +45,13 @@ function addPollingLocations() {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
       if (xmlHttp.responseText == 'No User Found') {
         // Display You Must Login Error...
+        document.getElementById('warn-msg').style.display = 'inline-block';
       } else {
         getPollingLocations(xmlHttp.responseText);
       }
     }
   }
-  xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/locations/user-address', true); // true for asynchronous
+  xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/locations/user-address', true); // true for asynchronous 
   xmlHttp.send(null);
 }
 

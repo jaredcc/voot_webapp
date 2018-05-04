@@ -68,12 +68,21 @@ function parseRepData(apiData) {
     // Loop through offices array
     // and pull the indices. Use
     // these indices to get rep data
-    repData.offices.forEach(function(office) {
-        var officeName = office.name;
-        office.officialIndices.forEach(function(index) {
-            addRepToTable(index, repData, officeName);
-        });
-    });
+    // repData.offices.forEach(function(office) {
+    //     var officeName = office.name;
+    //     office.officialIndices.forEach(function(index) {
+    //         addRepToTable(index, repData, officeName);
+    //     });
+    // });
+
+    for (let i = repData.offices.length - 1; i >= 0; i--) {
+      var office = repData.offices[i];
+      var officeName = office.name;
+      console.log(office);
+      for (let j = office.officialIndices.length - 1; j >= 0; j--) {
+        addRepToTable(office.officialIndices[j], repData, officeName);
+      }
+    }
 }
 
 // Using the given index, finds the
@@ -112,6 +121,12 @@ function generateRep(index, repData, officeName) {
     // Set Representative Name, Party, Address
     var repName = rep.name;
     repName = repName.replace(/\s/g, '');
+
+    if (rep.phones == undefined) {
+      rep.phones = [
+        'No Number Listed'
+      ]
+    }
 
     $(repCell).data("data-info", {
       name: name,
