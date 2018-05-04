@@ -11,7 +11,6 @@ var config = {
   };
   firebase.initializeApp(config);
 
-
   var firebaseUser = null;
   const auth = firebase.auth();
 

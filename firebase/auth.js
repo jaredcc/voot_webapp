@@ -4,7 +4,11 @@ var auth = require(path.resolve(__dirname, "./firebase"));
 
 //New user sign up
 const doCreateUserWithEmailAndPassword = (email, password) =>
-	auth.auth.createUserWithEmailAndPassword(email, password);
+	auth.auth.createUserWithEmailAndPassword(email, password)
+		.catch(function(error) {
+			console.log(error);
+			return error;
+		});
 
 //login existing user
 const doSignInWithEmailAndPassword = (email, password) =>

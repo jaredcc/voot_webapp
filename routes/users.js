@@ -64,7 +64,6 @@ router.post('/login', function(req, res, next) {
   // TODO Pull This User's Information
   // From the Database and setup the process
   // environment variable
-  
 
 });
 
@@ -81,7 +80,11 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
   var email = req.body.email;
   var password = req.body.password;
-  auth.auth.doCreateUserWithEmailAndPassword(email, password).then(function() {
+
+  var error = auth.auth.doCreateUserWithEmailAndPassword(email, password);
+  if (error) {
+    res.render('error');
+  } else {
     auth.auth.doSignInWithEmailAndPassword(email, password).then(function() {
       var firstname = req.body.firstname;
       var lastname = req.body.lastname;
@@ -96,8 +99,10 @@ router.post('/signup', function(req, res, next) {
       database.database.writeUserData(uid, firstname, lastname, email, street, state, city, zipcode, "true");
       res.redirect('/users/profile');
     });
-  });
+  }
 });
+
+
 
 router.get('/signout', function(req, res, next) {
   // Grab user from firebase instance
