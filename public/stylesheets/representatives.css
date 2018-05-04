@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+body {
+  padding-top: 5px;
+  padding-bottom: 50px;
+}
 
 /* Begin Animation Code for Table */
 @keyframes FadeIn {
@@ -86,10 +90,14 @@
 }
 
 #addressForm {
-  padding-left: 15em;
-  padding-right: 15em;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  width: 50%;
+  height: 60%;
+  padding: 20px;
+  background: #f8f8f8;
+  border: 1px solid #f8f8f9;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px grey;
+  margin: auto;
 }
 
 #repBtn {
@@ -139,6 +147,7 @@
 .form-msg {
   display: inline-block;
   margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 #alert-wrapper {
@@ -148,6 +157,7 @@
 #myModal {
   padding-bottom: 60px;
 }
+
 img {
   padding: 0;
 }

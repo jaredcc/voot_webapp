@@ -7,16 +7,8 @@ var firebase = require(path.resolve(__dirname, "../firebase/index"));
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  // Grab user from firebase instance
-  var user = auth.firebase.auth.currentUser;
-  if (user) { // user exists
-    var uid = user.uid;
-    database.database.readUserData(uid);
-    /*res.render('users', {status: 'Sign Out', firstname: userData.firstname, lastname: userData.lastname, email: userData.email, street: userData.street, state: userData.state, city: userData.city, county: userData.county, zipcode: userData.zipcode});*/
-  } else { // return error message
-    res.render('login', {status: 'Login'});
-  }
-});
+     res.redirect('/users/profile');
+  });
 
 router.get('/profile', function(req, res, next) {
   // Grab user from firebase instance
