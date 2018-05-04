@@ -33,7 +33,7 @@ function fillCalendar() {
       }
     }
   }
-  xmlHttp.open("GET", 'http://vootapp-2a028.appspot.com/elections/user-state', true); // true for asynchronous
+  xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/elections/user-state', true); // true for asynchronous
   xmlHttp.send(null);
 }
 

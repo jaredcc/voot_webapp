@@ -50,7 +50,7 @@ function addPollingLocations() {
       }
     }
   }
-  xmlHttp.open("GET", 'http://vootapp-2a028.appspot.com/locations/user-address', true); // true for asynchronous
+  xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/locations/user-address', true); // true for asynchronous
   xmlHttp.send(null);
 }
 
