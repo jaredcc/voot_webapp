@@ -7,17 +7,19 @@ api = {
     "zipCode" : "78660"
 };
 
-function getReqString(addressEmpty) {
-  if (addressEmpty) {
-    return api.URL + api.API_Key + "&address=" + api.address + " " + api.city + " " + api.state + " " + api.zipCode;
-  }
-  else {
+window.onload = function() {
+  var adr = document.getElementById('address').value.split('%20').join(' ');
+  console.log(adr);
+  document.getElementById('address').value = adr;
+}
+
+function getRequestString() {
+
     return api.URL + api.API_Key
      + "&address=" + document.getElementById('address').value + " "
      + document.getElementById('city').value + " "
      + document.getElementById('state').value + " "
      + document.getElementById('zipCode').value;
-  }
 
 }
 
@@ -39,29 +41,23 @@ function addressEmpty() {
 
 function sendRequest() {
 
-    // TODO send request to server to
-    // get the user's saved address
-
     // Change the Page header and Hide Alert
     document.getElementById('header').innerHTML = "Your Representatives";
+    document.getElementById('addressForm').style.display = "none";
     document.getElementById('form-msg').style.display = "none";
 
     // Clear the current list
     document.getElementById("repTable").innerHTML = "";
 
-    // Check if the Address is Empty
-    var isEmpty = addressEmpty();
-    var reqURL = getReqString(isEmpty);
-
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            // TODO Check if the response is VALID
-            parseRepData(xmlHttp.responseText);
+    var reqURL = getRequestString();
+    var xml = new XMLHttpRequest();
+    xml.onreadystatechange = function() {
+        if (xml.readyState == 4 && xml.status == 200) {
+            parseRepData(xml.responseText);
         }
     }
-    xmlHttp.open("GET", reqURL, true); // true for asynchronous
-    xmlHttp.send(null);
+    xml.open("GET", reqURL, true); // true for asynchronous
+    xml.send(null);
 }
 
 function parseRepData(apiData) {

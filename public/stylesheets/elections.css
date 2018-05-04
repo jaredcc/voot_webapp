@@ -47,6 +47,11 @@ tr {
 
 }
 
+.warn-msg {
+  display: inline-block;
+  margin: 0 auto;
+}
+
 /* Election Calendar */
 .calendar-wrapper {
   width: 75%;

@@ -24,7 +24,6 @@ router.get('/profile', function(req, res, next) {
   			street:(snapshot.val() && snapshot.val().street),
   			state:(snapshot.val() && snapshot.val().state),
   			city:(snapshot.val() && snapshot.val().city),
-  			county:(snapshot.val() && snapshot.val().county),
   			zipcode:(snapshot.val() && snapshot.val().zipcode)
   		};
   	}).then(function() {
@@ -37,7 +36,6 @@ router.get('/profile', function(req, res, next) {
         street: userData.street,
         state: userData.state,
         city: userData.city,
-        county: userData.county,
         zipcode: userData.zipcode
       });
     });
@@ -85,12 +83,11 @@ router.post('/signup', function(req, res, next) {
       var street = req.body.address;
       var state = req.body.state;
       var city = req.body.city;
-      var county = req.body.county;
       var zipcode = req.body.zipcode;
       // var user = firebase.firebase.firebaseUser;
       var user = auth.firebase.auth.currentUser;
       var uid = user.uid;
-      database.database.writeUserData(uid, firstname, lastname, email, street, state, city, county, zipcode, "true");
+      database.database.writeUserData(uid, firstname, lastname, email, street, state, city, zipcode, "true");
       res.redirect('/users/profile');
     });
   });

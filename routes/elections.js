@@ -15,4 +15,26 @@ router.get('/', function(req, res, next) {
   }
 });
 
+router.get('/user-state', function(req, res, next) {
+  var user = auth.firebase.auth.currentUser;
+  if (user) { // user exists
+    var uid = user.uid;
+    var userData;
+    firebase.firebase.database.ref('/USERS_TABLE/' + uid).once('value').then(function(snapshot) {
+  		userData = {
+  			state:(snapshot.val() && snapshot.val().state)
+  		};
+  	}).then(function() {
+      if (!userData.state.trim()) {
+        res.send('No User Found');
+      } else {
+        res.send(userData.state);
+      }
+    });
+  }
+  else { // return error message
+    res.send('No User Found');
+  }
+});
+
 module.exports = router;

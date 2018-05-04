@@ -26,7 +26,7 @@ function initMap() {
       lat: 30.2672,
       lng: -97.7431
     },
-    zoom: 8
+    zoom: 12
   });
 
   addMarker(30.2672, -97.7431, 'Austin, Texas'); // Austin, Tx

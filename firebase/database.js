@@ -3,7 +3,7 @@ var database = require(path.resolve(__dirname, "./firebase"));
 
 
 //New user sign up write data
-const writeUserData = (uid, firstname, lastname, email, street, state, city, county, zipcode, electionReminders) =>
+const writeUserData = (uid, firstname, lastname, email, street, state, city, zipcode, electionReminders) =>
 	database.database.ref('USERS_TABLE/' + uid).set({
 		firstname: firstname,
 		lastname: lastname,
@@ -11,7 +11,6 @@ const writeUserData = (uid, firstname, lastname, email, street, state, city, cou
 		street: street,
 		state: state,
 		city: city,
-		county: county,
 		zipcode: zipcode,
 		electionReminders: electionReminders
 	});
