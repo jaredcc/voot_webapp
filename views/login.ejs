@@ -44,10 +44,10 @@
       </li>
     </ul>
   </nav>
-  <!-- END Navigation Bar method="post" action="/users/login" -->
+  <!-- END Navigation Bar  -->
 
   <h1 class="login-header" id="header">Login to your Account</h1>
-  <form >
+  <form method="post" action="/users/login">
     <div class="form-field">
       <label for="email">Email</label>
       <input class="input" id="email" name="email" type="email"></input>
@@ -57,7 +57,7 @@
       <input class="input" id="password" name="password" type="password"></input>
     </div>
     <div class="form-action">
-      <button onclick="login()" class="btn" type="submit">Login</button>
+      <button class="btn" type="submit">Login</button>
     </div>
     <a id="signupLink" href="/users/signup">Create a new account here!</a>
   </form>

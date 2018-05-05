@@ -22,19 +22,21 @@ function addEvent(event) {
 }
 
 function fillCalendar() {
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.onreadystatechange = function() {
-    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-      if (xmlHttp.responseText == 'No User Found') {
-        // Display You Must Login Error...
-        getElections('No User State');
-      } else {
-        getElections(xmlHttp.responseText);
-      }
-    }
-  }
-  xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/elections/user-state', true); // true for asynchronous
-  xmlHttp.send(null);
+  // var xmlHttp = new XMLHttpRequest();
+  // xmlHttp.onreadystatechange = function() {
+  //   if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+  //     if (xmlHttp.responseText == 'No User Found') {
+  //       // Display You Must Login Error...
+  //       getElections('No User State');
+  //     } else {
+  //
+  //     }
+  //   }
+  // }
+  // xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/elections/user-state', true); // true for asynchronous
+  // xmlHttp.send(null);
+
+  getElections("Texas");
 }
 
 function getElections(state) {

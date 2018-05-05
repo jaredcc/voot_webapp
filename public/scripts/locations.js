@@ -39,20 +39,21 @@ function initMap() {
 // stored address, finds polling locations
 // and displays them on the map
 function addPollingLocations() {
-  // get user address from server
-  var xmlHttp = new XMLHttpRequest();
-  xmlHttp.onreadystatechange = function() {
-    if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-      if (xmlHttp.responseText == 'No User Found') {
-        // Display You Must Login Error...
-        document.getElementById('warn-msg').style.display = 'inline-block';
-      } else {
-        getPollingLocations(xmlHttp.responseText);
-      }
-    }
-  }
-  xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/locations/user-address', true); // true for asynchronous 
-  xmlHttp.send(null);
+  // // get user address from server
+  // var xmlHttp = new XMLHttpRequest();
+  // xmlHttp.onreadystatechange = function() {
+  //   if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+  //     if (xmlHttp.responseText == 'No User Found') {
+  //       // Display You Must Login Error...
+  //       document.getElementById('warn-msg').style.display = 'inline-block';
+  //     } else {
+  //       getPollingLocations("2708 San Pedro Street Austin, Texas 78705");
+  //     }
+  //   }
+  // }
+  // xmlHttp.open("GET", 'https://vootapp-2a028.appspot.com/locations/user-address', true); // true for asynchronous
+  // xmlHttp.send(null);
+  getPollingLocations("2708 San Pedro Street Austin, Texas 78705");
 }
 
 // Calls google civic information api
